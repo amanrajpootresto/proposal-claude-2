@@ -332,13 +332,13 @@
     Aur Future ke liye… <b>I Choose You</b>.
   </div>
 
-  <div class="timer" id="loveTimer">
+  <!-- <div class="timer" id="loveTimer">
     <div class="box"><span class="num" id="tYears">0</span><span class="lbl">Years</span></div>
     <div class="box"><span class="num" id="tMonths">0</span><span class="lbl">Months</span></div>
     <div class="box"><span class="num" id="tDays">0</span><span class="lbl">Days</span></div>
     <div class="box"><span class="num" id="tHours">0</span><span class="lbl">Hours</span></div>
     <div class="box"><span class="num" id="tMins">0</span><span class="lbl">Mins</span></div>
-  </div>
+  </div> -->
 
   <button class="final-btn" id="smileBtn">Will You Smile For Me?</button>
   <div id="smileBack"></div>
@@ -441,34 +441,34 @@ if(CONFIG.musicSrc){
 }
 
 /* ---------- live love timer ---------- */
-function updateTimer(){
-  const start = new Date(CONFIG.startDate);
-  const now = new Date();
-  let diffMs = now - start;
-  if(diffMs < 0) diffMs = 0;
+// function updateTimer(){
+//   const start = new Date(CONFIG.startDate);
+//   const now = new Date();
+//   let diffMs = now - start;
+//   if(diffMs < 0) diffMs = 0;
 
-  let years = now.getFullYear() - start.getFullYear();
-  let months = now.getMonth() - start.getMonth();
-  let days = now.getDate() - start.getDate();
-  let hours = now.getHours() - start.getHours();
-  let mins = now.getMinutes() - start.getMinutes();
+//   let years = now.getFullYear() - start.getFullYear();
+//   let months = now.getMonth() - start.getMonth();
+//   let days = now.getDate() - start.getDate();
+//   let hours = now.getHours() - start.getHours();
+//   let mins = now.getMinutes() - start.getMinutes();
 
-  if(mins < 0){ mins += 60; hours--; }
-  if(hours < 0){ hours += 24; days--; }
-  if(days < 0){
-    const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0).getDate();
-    days += prevMonth; months--;
-  }
-  if(months < 0){ months += 12; years--; }
+//   if(mins < 0){ mins += 60; hours--; }
+//   if(hours < 0){ hours += 24; days--; }
+//   if(days < 0){
+//     const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+//     days += prevMonth; months--;
+//   }
+//   if(months < 0){ months += 12; years--; }
 
-  document.getElementById('tYears').textContent = Math.max(years,0);
-  document.getElementById('tMonths').textContent = Math.max(months,0);
-  document.getElementById('tDays').textContent = Math.max(days,0);
-  document.getElementById('tHours').textContent = Math.max(hours,0);
-  document.getElementById('tMins').textContent = Math.max(mins,0);
-}
-updateTimer();
-setInterval(updateTimer, 1000*30);
+//   document.getElementById('tYears').textContent = Math.max(years,0);
+//   document.getElementById('tMonths').textContent = Math.max(months,0);
+//   document.getElementById('tDays').textContent = Math.max(days,0);
+//   document.getElementById('tHours').textContent = Math.max(hours,0);
+//   document.getElementById('tMins').textContent = Math.max(mins,0);
+// }
+// updateTimer();
+// setInterval(updateTimer, 1000*30);
 
 /* ---------- smile button ---------- */
 const smileMsgs = [
